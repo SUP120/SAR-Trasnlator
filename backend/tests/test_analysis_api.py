@@ -54,3 +54,14 @@ def test_live_job_fails_explicitly_when_project_is_not_configured():
                                              "window": {"kind": "preset", "days": 30}})
     assert result.status_code == 503
     assert "Earth Engine" in result.json()["detail"]
+
+
+def test_stateless_example_is_available_from_another_worker():
+    submitter = TestClient(create_app(Settings(stateless=True)))
+    reader = TestClient(create_app(Settings(stateless=True)))
+    snapshot = submitter.post("/api/analyses", json={"source": "synthetic"}).json()
+    assert snapshot["status"] == "done"
+    result = reader.get(f"/api/analyses/{snapshot['id']}").json()
+    assert result["result"]["stats"] == snapshot["result"]["stats"]
+    image_path = result["result"]["layers"]["change"]
+    assert reader.get(f"/api/{image_path}").headers["Content-Type"] == "image/png"

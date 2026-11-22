@@ -48,4 +48,6 @@ The land evidence provider serves `inspection`, `history`, and `plot` under the 
 
 The queue allows two simultaneous jobs and retains at most 24 recent outcomes, with a one-hour retention limit. Historical results bypass the queue. Their IDs are derived from the slug, manifest and image bytes, so unchanged bundles keep their layer and report links across restarts. SQLite persistence of new jobs and GeoJSON flood vectorization are pending.
 
+On Vercel, `vercel.json` serves the Vite build and sends `/api` to `api/index.py`. That entry point serves the packaged evidence without Earth Engine credentials or cross-request worker state. The synthetic radar case uses a deterministic ID and can be recomputed by any worker. The local entry point retains the asynchronous job workflow.
+
 Each bundled historical directory contains `event.json` and three aligned RGBA PNGs named `before.png`, `after.png`, and `change.png`. Use a successful verified API result when preparing a manifest. Set `schema_version` to `1`, record the published `reference_url` and any pairing `rejections`, and omit the transient `id`, `layers`, and `cached_event` fields from `result`. The app regenerates reports from the bundled data and does not fetch the linked reference image.

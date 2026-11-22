@@ -1,0 +1,16 @@
+.git
+.vercel
+.venv
+.env
+.env.*
+.npm-cache
+.uv-cache
+.pytest_cache
+**/__pycache__
+**/node_modules
+backend/secrets
+backend/tests
+frontend/dist
+data/local
+validation
+SAR Translator* (1).md

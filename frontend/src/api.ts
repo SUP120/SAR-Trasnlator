@@ -24,7 +24,7 @@ export async function fetchApi(path: string, options: RequestInit): Promise<Resp
     const body = await response.json().catch(() => null)
     if (typeof body?.detail === 'string') throw new Error(body.detail)
     if (response.status === 422) throw new Error('Check the study boundary and date settings, then try again.')
-    throw new Error('The local API is unavailable. Check that the backend is running.')
+    throw new Error('The analysis service is unavailable. Try again shortly.')
   }
   return response
 }

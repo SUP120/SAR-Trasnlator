@@ -139,7 +139,7 @@ export function App() {
       setApiStatus('online')
     } catch (error) {
       if (!controller.signal.aborted) {
-        setAreaError(error instanceof TypeError ? 'The local API is unavailable. Check that the backend is running.'
+        setAreaError(error instanceof TypeError ? 'The analysis service is unavailable. Try again shortly.'
           : error instanceof Error ? error.message : 'The boundary could not be checked. Try again.')
       }
     } finally {
@@ -150,7 +150,7 @@ export function App() {
     }
   }
 
-  const apiLabel = { checking: 'Checking local API', online: 'Local API online', unavailable: 'Local API unavailable' }[apiStatus]
+  const apiLabel = { checking: 'Connecting…', online: 'Analysis service online', unavailable: 'Analysis service unavailable' }[apiStatus]
   const result = job?.result
   const historicalExample = historicalExamples.find((event) => event.slug === chosenExampleSlug) ?? historicalExamples[0]
   let analysisWindow: Window | null = null

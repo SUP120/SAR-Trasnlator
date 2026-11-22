@@ -104,6 +104,12 @@ To rebuild the assets, save `ne_50m_admin_0_countries.geojson`, `ne_50m_admin_1_
 
 See the [PRD](docs/PRD.md), [implementation status](docs/agent-memory/PROGRESS.md), and [handoff](docs/agent-memory/HANDOFF.md).
 
+## Deploy to Vercel
+
+Import the repository with the project root set to the repository root. `vercel.json` builds the Vite site and routes `/api` requests to a Python function. From a linked checkout, run `vercel --prod`.
+
+The hosted version includes the historical radar examples, the synthetic practice case, and both land demos with terrain, comparisons, monsoon playback, and reports. New Earth Engine analyses run through the local service. They use credentials and temporary analysis state that the Vercel deployment does not share.
+
 ## Contributors
 
 - Supriyam Kumar

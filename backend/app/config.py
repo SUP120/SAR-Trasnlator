@@ -10,6 +10,7 @@ class Settings:
     origins: tuple[str, ...] = ()
     earth_engine_project: str = ""
     processing_scale_m: int = 10
+    stateless: bool = False
 
     @classmethod
     def from_environment(cls) -> "Settings":

@@ -20,6 +20,7 @@ Added monthly satellite land observations, real farmland and dry-land archives, 
 - Scenario results now offer a 3D replay over the elevation surface. Browser checks covered both demos, chart and map synchronization, and playback. The offline suite passed 37 tests.
 - The scenario and satellite screens use everyday language for measurements, with short notes for percentages, excess water, and map colors. Browser checks covered both map views and the satellite chart.
 - The 3D terrain view explains its height colors and height stretching before presenting the source details. The replay explains its separate soil-water colors. Both guides were verified in the browser.
+- The GitHub-linked Vercel project serves the public demo at https://sar-translator.vercel.app. The production API uses packaged observations and a stateless practice case. Live Earth Engine analyses continue through the local service.
 - Both offline land demos include field-inspection patches, comparable plot facts, a July 2024 rainfall replay, and an aligned 1995–2025 Landsat comparison. Browser checks covered all four views, and the offline backend suite passed 40 tests.
 
 - 31 pytest checks passed with Earth Engine disabled and the Vite production build passed. Offline tests cover the three flood cases, both land demos, their reports, and distinct scenario runs.

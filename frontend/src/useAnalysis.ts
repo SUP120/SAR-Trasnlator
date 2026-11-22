@@ -40,7 +40,7 @@ export function useAnalysis() {
       }
     } catch (problem) {
       if (!controller.signal.aborted) {
-        setError(problem instanceof TypeError ? 'The local API could not be reached.'
+        setError(problem instanceof TypeError ? 'The analysis service could not be reached.'
           : problem instanceof Error ? problem.message : 'The request failed. Try again.')
       }
     } finally {

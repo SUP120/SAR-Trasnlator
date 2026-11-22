@@ -1,15 +1,17 @@
 from dataclasses import replace
+from functools import lru_cache
+from hashlib import sha256
 from typing import Annotated
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Path, Response
 
-from ..analysis import AnalysisRequest, LiveRequest
+from ..analysis import METHOD_VERSION, AnalysisRequest, LiveRequest, SyntheticRequest, run_analysis
 from ..aoi import InvalidAoi, validate_aoi
 from ..cached_events import EventCatalog
 from ..config import Settings
 from ..explanations import Explanation, Language, explain
 from ..jobs import Jobs, QueueFull, Snapshot
-from ..pipeline.raster import LayerName, Parameters
+from ..pipeline.raster import GridError, LayerName, Parameters, RenderedLayers
 from ..providers.earth_engine import EarthEngineProvider
 from ..providers.synthetic import EXAMPLE_SLUG, EXAMPLE_TITLE, SyntheticProvider
 from ..reports.pdf import build_report
@@ -24,11 +26,25 @@ def analysis_router(settings: Settings) -> APIRouter:
     example = SyntheticProvider()
     earth = EarthEngineProvider(settings.earth_engine_project) if settings.earth_engine_project else None
     defaults = Parameters()
+    practice_id = sha256(f"{EXAMPLE_SLUG}:{METHOD_VERSION}".encode()).hexdigest()[:32]
+
+    @lru_cache(maxsize=1)
+    def practice_result() -> tuple[Snapshot, RenderedLayers]:
+        try:
+            outcome = run_analysis(practice_id, SyntheticRequest(source="synthetic"), example, defaults,
+                                   settings.max_aoi_km2, lambda _: None)
+        except (GridError, InvalidAoi) as error:
+            raise HTTPException(status_code=422, detail=str(error)) from error
+        if outcome.result is None or outcome.layers is None:
+            raise HTTPException(status_code=503, detail="The synthetic example is unavailable.")
+        return Snapshot(id=practice_id, source="synthetic", status="done", result=outcome.result), outcome.layers
 
     def get_job(job_id: str):
         cached = catalog.by_id.get(job_id)
         if cached is not None:
             return cached.snapshot, cached.layers
+        if settings.stateless and job_id == practice_id:
+            return practice_result()
         job = jobs.get(job_id)
         if job is None:
             raise HTTPException(status_code=404, detail="This analysis has expired or does not exist.")
@@ -55,7 +71,7 @@ def analysis_router(settings: Settings) -> APIRouter:
         return event.snapshot
 
     @router.post("/analyses", response_model=Snapshot, status_code=202)
-    async def submit(analysis: AnalysisRequest, background: BackgroundTasks):
+    def submit(analysis: AnalysisRequest, background: BackgroundTasks):
         provider = example
         params = defaults
         if isinstance(analysis, LiveRequest):
@@ -67,6 +83,8 @@ def analysis_router(settings: Settings) -> APIRouter:
                 raise HTTPException(status_code=422, detail=str(error)) from error
             provider = earth
             params = replace(defaults, scale_m=settings.processing_scale_m)
+        elif settings.stateless:
+            return practice_result()[0]
         try:
             job = jobs.create(analysis.source)
         except QueueFull as error:

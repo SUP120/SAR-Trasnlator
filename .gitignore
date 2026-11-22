@@ -5,6 +5,7 @@ backend/secrets/
 .venv/
 __pycache__/
 .pytest_cache/
+.vercel/
 .uv-cache/
 .npm-cache/
 *.pyc
