@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "reference_url": "https://sentinel-asia.org/EO/2024/article20240827IN/MBRSC/MBRSC_INDIA_FLOOD_27th_AUG24.jpg",
+  "result": {
+    "source": "earth_engine",
+    "title": "Central Gujarat, August 2024",
+    "aoi": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.087,
+            22.155
+          ],
+          [
+            73.145,
+            22.155
+          ],
+          [
+            73.145,
+            22.208
+          ],
+          [
+            73.087,
+            22.208
+          ],
+          [
+            73.087,
+            22.155
+          ]
+        ]
+      ]
+    },
+    "aoi_area_km2": 35.10474926682472,
+    "periods": {
+      "start": "2024-07-23",
+      "event": "2024-08-28",
+      "end_exclusive": "2024-08-29"
+    },
+    "geometry": {
+      "orbit_pass": "DESCENDING",
+      "relative_orbit": 34,
+      "mode": "IW",
+      "polarizations": [
+        "VH",
+        "VV"
+      ]
+    },
+    "pre": [
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240723T010238_20240723T010303_054881_06AF21_F62E",
+        "acquired_at": "2024-07-23T01:02:38Z",
+        "platform": "S1A"
+      },
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240816T010238_20240816T010303_055231_06BB87_9F2C",
+        "acquired_at": "2024-08-16T01:02:38Z",
+        "platform": "S1A"
+      }
+    ],
+    "post": [
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240828T010239_20240828T010304_055406_06C204_DFDE",
+        "acquired_at": "2024-08-28T01:02:39Z",
+        "platform": "S1A"
+      }
+    ],
+    "footprint_coverage_pct": 100.0,
+    "stats": {
+      "sampled_aoi_km2": 35.224,
+      "flood_ha": 384.84,
+      "flood_km2": 3.8484,
+      "flood_pct_of_aoi": 10.925505337270042,
+      "preexisting_water_ha": 7.62,
+      "valid_coverage_pct": 100.0,
+      "masked_terrain_pct": 2.343288666818079
+    },
+    "masks_excluded_ha": {
+      "preexisting_water": 0.74,
+      "terrain": 23.5,
+      "small_clusters": 1.66
+    },
+    "parameters": {
+      "scale_m": 10,
+      "water_db": -15.0,
+      "change_db": -3.0,
+      "speckle_radius_m": 40,
+      "permanent_water_pct": 90,
+      "max_slope_deg": 5,
+      "max_hand_m": 15,
+      "min_cluster_pixels": 8
+    },
+    "classification": "possible_flooding",
+    "quality": {
+      "overall": "Low",
+      "factors": [
+        {
+          "name": "Orbit compatibility",
+          "observed": "S1A",
+          "grade": "Good"
+        },
+        {
+          "name": "Observation gap",
+          "observed": "12 days before / 0 days after",
+          "grade": "Good"
+        },
+        {
+          "name": "Shared valid coverage",
+          "observed": "100.0%",
+          "grade": "Good"
+        },
+        {
+          "name": "Scenes per composite",
+          "observed": "2 before / 1 after",
+          "grade": "Poor"
+        },
+        {
+          "name": "Terrain exclusion",
+          "observed": "2.3%",
+          "grade": "Good"
+        }
+      ]
+    },
+    "warnings": [
+      "Radar shadow and smooth surfaces can resemble water. Flooded vegetation and built-up areas may be missed.",
+      "The observation dates may miss the flood peak. Composite medians can hide short-lived changes."
+    ],
+    "attributions": [
+      "Contains modified Copernicus Sentinel data 2024.",
+      "EC JRC/Google Global Surface Water v1.4; MERIT Hydro (Yamazaki et al. 2019).",
+      "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved."
+    ],
+    "bounds": [
+      [
+        22.15492787466514,
+        73.08697134621349
+      ],
+      [
+        22.208071872044293,
+        73.14501068595631
+      ]
+    ],
+    "created_at": "2026-11-21T17:45:05.424638Z",
+    "method_version": "sar-vv-1"
+  },
+  "rejections": []
+}

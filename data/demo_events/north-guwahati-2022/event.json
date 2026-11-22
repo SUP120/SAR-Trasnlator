@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "reference_url": "https://sentinel-asia.org/EO/2022/article20220615IN/MBRSC/MBRSC_North-Guwahati.jpg",
+  "result": {
+    "source": "earth_engine",
+    "title": "North Guwahati, June 2022",
+    "aoi": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.707,
+            26.216
+          ],
+          [
+            91.748,
+            26.216
+          ],
+          [
+            91.748,
+            26.255
+          ],
+          [
+            91.707,
+            26.255
+          ],
+          [
+            91.707,
+            26.216
+          ]
+        ]
+      ]
+    },
+    "aoi_area_km2": 17.700919352350233,
+    "periods": {
+      "start": "2022-06-04",
+      "event": "2022-06-15",
+      "end_exclusive": "2022-06-17"
+    },
+    "geometry": {
+      "orbit_pass": "ASCENDING",
+      "relative_orbit": 41,
+      "mode": "IW",
+      "polarizations": [
+        "VH",
+        "VV"
+      ]
+    },
+    "pre": [
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220604T115709_20220604T115734_043513_053205_FD80",
+        "acquired_at": "2022-06-04T11:57:09Z",
+        "platform": "S1A"
+      }
+    ],
+    "post": [
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20220616T115710_20220616T115735_043688_05373A_2FBB",
+        "acquired_at": "2022-06-16T11:57:10Z",
+        "platform": "S1A"
+      }
+    ],
+    "footprint_coverage_pct": 99.9999999999948,
+    "stats": {
+      "sampled_aoi_km2": 17.7856,
+      "flood_ha": 358.02,
+      "flood_km2": 3.5802,
+      "flood_pct_of_aoi": 20.129767902123067,
+      "preexisting_water_ha": 20.98,
+      "valid_coverage_pct": 100.0,
+      "masked_terrain_pct": 24.844256027347967
+    },
+    "masks_excluded_ha": {
+      "preexisting_water": 0.52,
+      "terrain": 2.2,
+      "small_clusters": 0.34
+    },
+    "parameters": {
+      "scale_m": 10,
+      "water_db": -15.0,
+      "change_db": -3.0,
+      "speckle_radius_m": 40,
+      "permanent_water_pct": 90,
+      "max_slope_deg": 5,
+      "max_hand_m": 15,
+      "min_cluster_pixels": 8
+    },
+    "classification": "possible_flooding",
+    "quality": {
+      "overall": "Low",
+      "factors": [
+        {
+          "name": "Orbit compatibility",
+          "observed": "S1A",
+          "grade": "Good"
+        },
+        {
+          "name": "Observation gap",
+          "observed": "11 days before / 1 days after",
+          "grade": "Good"
+        },
+        {
+          "name": "Shared valid coverage",
+          "observed": "100.0%",
+          "grade": "Good"
+        },
+        {
+          "name": "Scenes per composite",
+          "observed": "1 before / 1 after",
+          "grade": "Poor"
+        },
+        {
+          "name": "Terrain exclusion",
+          "observed": "24.8%",
+          "grade": "Fair"
+        }
+      ]
+    },
+    "warnings": [
+      "Radar shadow and smooth surfaces can resemble water. Flooded vegetation and built-up areas may be missed.",
+      "The observation dates may miss the flood peak. Composite medians can hide short-lived changes."
+    ],
+    "attributions": [
+      "Contains modified Copernicus Sentinel data 2022.",
+      "EC JRC/Google Global Surface Water v1.4; MERIT Hydro (Yamazaki et al. 2019).",
+      "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved."
+    ],
+    "bounds": [
+      [
+        26.215959797380194,
+        91.7069243108041
+      ],
+      [
+        26.255007561056832,
+        91.7480700570146
+      ]
+    ],
+    "created_at": "2026-11-21T17:24:51.344427Z",
+    "method_version": "sar-vv-1"
+  },
+  "rejections": [
+    {
+      "geometry": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 77,
+        "mode": "IW",
+        "polarizations": [
+          "VH",
+          "VV"
+        ]
+      },
+      "reason": "missing_after",
+      "platform": null,
+      "footprint_coverage": null
+    },
+    {
+      "geometry": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 150,
+        "mode": "IW",
+        "polarizations": [
+          "VH",
+          "VV"
+        ]
+      },
+      "reason": "missing_after",
+      "platform": null,
+      "footprint_coverage": null
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "reference_url": "https://sentinel-asia.org/EO/2024/article20241025IN/MBRSC/MBRSC_INDIA-FLOOD-MAP_25TH_OCTOBER.jpg",
+  "result": {
+    "source": "earth_engine",
+    "title": "Balasore, October 2024",
+    "aoi": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            86.927,
+            21.49
+          ],
+          [
+            86.998,
+            21.49
+          ],
+          [
+            86.998,
+            21.555
+          ],
+          [
+            86.927,
+            21.555
+          ],
+          [
+            86.927,
+            21.49
+          ]
+        ]
+      ]
+    },
+    "aoi_area_km2": 52.94082057253265,
+    "periods": {
+      "start": "2024-08-29",
+      "event": "2024-10-28",
+      "end_exclusive": "2024-10-29"
+    },
+    "geometry": {
+      "orbit_pass": "DESCENDING",
+      "relative_orbit": 48,
+      "mode": "IW",
+      "polarizations": [
+        "VH",
+        "VV"
+      ]
+    },
+    "pre": [
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240829T000503_20240829T000528_055420_06C27C_C806",
+        "acquired_at": "2024-08-29T00:05:03Z",
+        "platform": "S1A"
+      },
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240910T000503_20240910T000528_055595_06C947_2DD2",
+        "acquired_at": "2024-09-10T00:05:03Z",
+        "platform": "S1A"
+      },
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20240922T000503_20240922T000528_055770_06D027_AF60",
+        "acquired_at": "2024-09-22T00:05:03Z",
+        "platform": "S1A"
+      },
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241004T000504_20241004T000529_055945_06D71E_BCFE",
+        "acquired_at": "2024-10-04T00:05:04Z",
+        "platform": "S1A"
+      },
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241016T000504_20241016T000529_056120_06DDFB_CC83",
+        "acquired_at": "2024-10-16T00:05:04Z",
+        "platform": "S1A"
+      }
+    ],
+    "post": [
+      {
+        "id": "COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20241028T000504_20241028T000529_056295_06E4F0_5AA6",
+        "acquired_at": "2024-10-28T00:05:04Z",
+        "platform": "S1A"
+      }
+    ],
+    "footprint_coverage_pct": 100.0,
+    "stats": {
+      "sampled_aoi_km2": 53.0964,
+      "flood_ha": 554.95,
+      "flood_km2": 5.5495,
+      "flood_pct_of_aoi": 10.451744374383198,
+      "preexisting_water_ha": 191.46,
+      "valid_coverage_pct": 100.0,
+      "masked_terrain_pct": 9.977889273095728
+    },
+    "masks_excluded_ha": {
+      "preexisting_water": 13.25,
+      "terrain": 16.57,
+      "small_clusters": 3.53
+    },
+    "parameters": {
+      "scale_m": 10,
+      "water_db": -15.0,
+      "change_db": -3.0,
+      "speckle_radius_m": 40,
+      "permanent_water_pct": 90,
+      "max_slope_deg": 5,
+      "max_hand_m": 15,
+      "min_cluster_pixels": 8
+    },
+    "classification": "possible_flooding",
+    "quality": {
+      "overall": "Low",
+      "factors": [
+        {
+          "name": "Orbit compatibility",
+          "observed": "S1A",
+          "grade": "Good"
+        },
+        {
+          "name": "Observation gap",
+          "observed": "12 days before / 0 days after",
+          "grade": "Good"
+        },
+        {
+          "name": "Shared valid coverage",
+          "observed": "100.0%",
+          "grade": "Good"
+        },
+        {
+          "name": "Scenes per composite",
+          "observed": "5 before / 1 after",
+          "grade": "Poor"
+        },
+        {
+          "name": "Terrain exclusion",
+          "observed": "10.0%",
+          "grade": "Good"
+        }
+      ]
+    },
+    "warnings": [
+      "Radar shadow and smooth surfaces can resemble water. Flooded vegetation and built-up areas may be missed.",
+      "The observation dates may miss the flood peak. Composite medians can hide short-lived changes."
+    ],
+    "attributions": [
+      "Contains modified Copernicus Sentinel data 2024.",
+      "EC JRC/Google Global Surface Water v1.4; MERIT Hydro (Yamazaki et al. 2019).",
+      "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved."
+    ],
+    "bounds": [
+      [
+        21.489947882150414,
+        86.92697011627276
+      ],
+      [
+        21.555048871709246,
+        86.99806830745766
+      ]
+    ],
+    "created_at": "2026-11-21T17:45:26.483040Z",
+    "method_version": "sar-vv-1"
+  },
+  "rejections": [
+    {
+      "geometry": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 85,
+        "mode": "IW",
+        "polarizations": [
+          "VH",
+          "VV"
+        ]
+      },
+      "reason": "missing_after",
+      "platform": null,
+      "footprint_coverage": null
+    }
+  ]
+}

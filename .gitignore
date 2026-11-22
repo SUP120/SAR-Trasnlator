@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+backend/secrets/
+.venv/
+__pycache__/
+.pytest_cache/
+.uv-cache/
+.npm-cache/
+*.pyc
+node_modules/
+dist/
+data/local/
+*.db
+# Keep the original PRD attachment local. The canonical copy is docs/PRD.md.
+/SAR Translator* (1).md
