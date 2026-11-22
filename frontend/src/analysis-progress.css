@@ -1,4 +1,4 @@
-.analysis-progress { margin-block: 10px; padding: 13px 15px; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 9px; background: var(--surface); color: var(--ink); }
+.analysis-progress { margin-block: 10px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--ink); }
 .analysis-progress-floating { position: fixed; z-index: 1450; right: 16px; bottom: 12px; width: min(420px, calc(100vw - 32px)); margin: 0; box-shadow: 0 8px 30px #0007; }
 .progress-head { display: flex; align-items: center; gap: 9px; }
 .progress-head h3 { font-size: 1rem; margin: 0; }
@@ -12,7 +12,7 @@
 .progress-mark { width: 15px; height: 15px; flex: none; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; }
 .progress-steps li[aria-current='step'] { color: var(--accent); font-weight: 700; }
 .progress-steps li[aria-current='step'] .progress-mark { border: 4px solid var(--selected); background: var(--accent); }
-.progress-done .progress-mark { color: var(--green); border-color: var(--green-line); background: var(--green-surface); }
+.progress-done .progress-mark { color: var(--green); border-color: var(--line); background: var(--raised); }
 .progress-detail { margin-top: 8px; }
 @keyframes analysis-sweep { from { transform: translateX(-105%); } to { transform: translateX(460%); } }
 @media (prefers-reduced-motion: reduce) {

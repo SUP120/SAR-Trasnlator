@@ -3,15 +3,14 @@
 .land-subheading, .land-result-header, .land-playback, .land-report-actions { display: flex; align-items: center; gap: 9px; }
 .land-subheading svg { color: var(--accent); }
 .land-subheading h2 { font-size: 1.45rem; letter-spacing: -.02em; }
-.land-workspace-heading { padding: 12px 15px; margin-bottom: 12px; background: var(--raised); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--panel-radius); }
+.land-workspace-heading { padding: 12px 15px; margin-bottom: 12px; background: var(--raised); border: 1px solid var(--line); border-radius: var(--panel-radius); }
 .land-setup-grid { display: grid; grid-template-columns: minmax(245px, .8fr) minmax(0, 1.35fr); align-items: stretch; gap: 12px; }
-.land-run { padding: 13px 15px; border-top: 3px solid var(--accent); }
+.land-run { padding: 13px 15px; }
 .land-run .land-live-form { margin-bottom: 0; }
 .land-workspace .support-text { margin-block: 6px 0; }
 .land-demos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-block: 14px; }
-.land-demo { --demo-color: var(--green); display: flex; gap: 12px; align-items: center; text-align: left; padding: 15px 17px; color: var(--demo-color); border-color: var(--green-line); background: var(--green-surface); }
-.land-demo-dryland { --demo-color: var(--amber); border-color: var(--amber-line); background: var(--amber-surface); }
-.land-demo:hover, .land-demo[aria-pressed='true'] { border-color: var(--demo-color); box-shadow: inset 3px 0 var(--demo-color); }
+.land-demo { display: flex; gap: 12px; align-items: center; text-align: left; padding: 15px 17px; color: var(--ink); background: var(--raised); }
+.land-demo:hover, .land-demo[aria-pressed='true'] { border-color: var(--line-active); background: var(--selected); }
 .land-demo svg { flex: none; }
 .land-demo span { font-weight: 640; }
 .land-demo small { display: block; margin-top: 4px; color: var(--muted); font-weight: 400; }
@@ -20,32 +19,32 @@
 .land-live-form :is(input, select), .land-fields :is(input, select) { min-width: 0; min-height: 38px; padding: 6px 8px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 7px; font: inherit; }
 .land-live-form .primary-button, .land-fields ~ .primary-button { width: auto; margin: 0; padding: 8px 16px; min-height: 38px; }
 .land-results { display: grid; gap: 16px; margin-top: 21px; }
-.land-result-header { justify-content: space-between; flex-wrap: wrap; padding: 16px 18px; border-color: var(--line-active); color: var(--ink); background: var(--raised); border-left: 4px solid var(--accent); }
+.land-result-header { justify-content: space-between; flex-wrap: wrap; padding: 16px 18px; border-color: var(--line-active); color: var(--ink); background: var(--raised); }
 .land-result-header h3 { font-size: clamp(1.12rem, 2vw, 1.43rem); }
 .land-result-header .support-text { color: var(--muted); }
 .land-result-header .guide-button { border-color: var(--line); }
 .land-result-header h3, #purpose-heading { scroll-margin-top: 12px; }
 .land-result-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-.land-focus { padding: 13px 15px; background: var(--surface); border-top: 3px solid var(--accent); }
+.land-focus { padding: 13px 15px; background: var(--surface); }
 .land-focus .land-live-form { align-items: stretch; flex-direction: column; }
 .land-focus .guide-button { align-self: start; }
 .land-focus .land-live-form { margin-bottom: 0; }
 .land-focus select { max-width: 100%; }
 .land-focus label { min-width: 0; }
-.land-view-switch { display: flex; flex-wrap: wrap; gap: 6px; padding: 7px; background: var(--raised); border: 1px solid var(--line); border-radius: 8px; }
-.land-view-switch button { font: inherit; font-size: .88rem; font-weight: 650; padding: 8px 12px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; }
+.land-view-switch { display: flex; flex-wrap: wrap; gap: 2px 8px; border-bottom: 1px solid var(--line); }
+.land-view-switch button { font: inherit; font-size: .88rem; font-weight: 620; padding: 10px 12px; background: transparent; color: var(--muted); border: 0; border-bottom: 2px solid transparent; }
 .land-view-switch button:hover { background: var(--hover); }
-.land-view-switch button[aria-pressed='true'] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+.land-view-switch button[aria-pressed='true'] { color: var(--ink); background: var(--raised); border-bottom-color: var(--accent); }
 .land-view-content:not([hidden]) { display: grid; gap: 14px; }
 .land-guidance { padding: 16px; }
 .land-guidance h4, .land-guidance h5 { margin: 0; }
 .land-guidance h4 { font-size: 1.1rem; margin-bottom: 11px; }
 .land-guidance h5 { font-size: .9rem; color: var(--accent); }
 .land-guidance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.land-guidance-grid > div, .land-ai-notes { padding: 12px; border: 1px solid var(--line-active); border-left: 3px solid var(--accent); border-radius: 7px; background: var(--blue-surface); }
-.land-guidance-grid .land-checks-card { border-color: var(--amber-line); border-left-color: var(--amber); background: var(--amber-surface); }
+.land-guidance-grid > div, .land-ai-notes { padding: 12px; border: 1px solid var(--line-active); border-radius: 7px; background: var(--raised); }
+.land-guidance-grid .land-checks-card { border-color: var(--line); background: var(--raised); }
 .land-checks-card h5 { color: var(--amber); }
-.land-ai-notes { border-color: var(--green-line); border-left-color: var(--green); background: var(--green-surface); }
+.land-ai-notes { border-color: var(--line); background: var(--raised); }
 .land-guidance-grid :is(p, ul), .land-ai-notes p { margin: 6px 0 0; line-height: 1.45; font-size: .9rem; }
 .land-guidance-grid ul { padding-left: 18px; }
 .land-guidance-grid li + li { margin-top: 5px; }
@@ -54,14 +53,12 @@
 .land-section-head { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: 5px 12px; margin-bottom: 12px; }
 .land-section-head span { color: var(--muted); font-size: .85rem; }
 .land-stat-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
-.land-stat { --stat-ink: var(--green); --stat-paper: var(--green-surface); display: grid; grid-template-columns: auto 1fr; justify-items: start; align-items: center; gap: 4px 8px; padding: 10px 11px; text-align: left; border: 1px solid var(--line); border-radius: 7px; color: var(--stat-ink); background: var(--stat-paper); }
-.land-stat-ndmi { --stat-ink: var(--cyan); --stat-paper: var(--cyan-surface); }
-.land-stat-soil_moisture_pct { --stat-ink: var(--blue); --stat-paper: var(--blue-surface); }
-.land-stat:is(:hover, [aria-pressed='true']) { border-color: var(--stat-ink); }
-.land-stat[aria-pressed='true'] { box-shadow: inset 0 3px var(--stat-ink); }
+.land-stat { display: grid; grid-template-columns: auto 1fr; justify-items: start; align-items: center; gap: 4px 8px; padding: 10px 11px; text-align: left; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: var(--raised); }
+.land-stat:is(:hover, [aria-pressed='true']) { border-color: var(--line-active); }
+.land-stat[aria-pressed='true'] { background: var(--selected); }
 .land-stat span { font-size: .82rem; font-weight: 620; }
 .land-stat strong { grid-column: 1 / -1; font-size: clamp(1rem, 2.5vw, 1.6rem); line-height: 1.12; }
-.land-stat small { grid-column: 1 / -1; font-size: .73rem; }
+.land-stat small { grid-column: 1 / -1; font-size: .73rem; color: var(--muted); }
 .land-chart { --bar: var(--green); --plot-height: 146px; min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--raised); }
 .land-chart[data-metric='ndmi'] { --bar: var(--cyan); }
 .land-chart[data-metric='soil_moisture_pct'] { --bar: var(--blue); }
