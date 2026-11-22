@@ -2,27 +2,27 @@
   font-family: Inter, 'Segoe UI', system-ui, sans-serif;
   color: var(--ink);
   background: var(--page);
-  color-scheme: dark;
+  color-scheme: light;
   font-synthesis: none;
-  --page: #151719;
-  --surface: #1e2023;
-  --raised: #25282b;
-  --hover: #34383d;
-  --inset: #191b1d;
-  --line: #3c4045;
-  --line-active: #6c737c;
-  --ink: #f0f1f2;
-  --muted: #b9bec4;
-  --accent: #c3cbd4;
-  --action: #414e5d;
-  --accent-hover: #505f70;
-  --accent-ink: #f5f6f7;
-  --selected: #303841;
-  --blue: #aabed5;
-  --green: #a9bdaf;
-  --amber: #cbb8a2;
-  --cyan: #9ebfc3;
-  --error: #dfb1ae;
+  --page: #f7f8fa;
+  --surface: #ffffff;
+  --raised: #f1f3f5;
+  --hover: #e7eaee;
+  --inset: #e9edf0;
+  --line: #d3d8de;
+  --line-active: #7a8694;
+  --ink: #20252a;
+  --muted: #505b66;
+  --accent: #455566;
+  --action: #394653;
+  --accent-hover: #2d3945;
+  --accent-ink: #ffffff;
+  --selected: #e5eaf0;
+  --blue: #435d77;
+  --green: #426150;
+  --amber: #765731;
+  --cyan: #40646a;
+  --error: #942c29;
   --panel-radius: 6px;
 }
 
@@ -74,7 +74,7 @@ p, h1, h2, h3 { margin: 0; }
 .leaflet-container { flex: 1; min-height: clamp(420px, 58vh, 610px); background: #24343a; font: inherit; color: inherit; border-block: 1px solid var(--line); }
 .leaflet-container:focus-visible { outline-offset: -3px; z-index: 0; }
 .leaflet-container.is-drawing, .leaflet-container.is-drawing .leaflet-grab { cursor: crosshair; }
-.map-tools, .map-navigation { position: absolute; z-index: 800; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); display: flex; box-shadow: 0 3px 16px #0006; }
+.map-tools, .map-navigation { position: absolute; z-index: 800; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); display: flex; box-shadow: 0 3px 12px #18222c33; }
 .map-tools { top: 14px; left: 14px; }
 .map-navigation { top: 14px; right: 14px; flex-direction: column; }
 .map-tools button, .map-navigation button { display: grid; place-items: center; width: 39px; height: 39px; border: 0; color: var(--ink); background: transparent; }

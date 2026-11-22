@@ -10,7 +10,7 @@ Added monthly satellite land observations, real farmland and dry-land archives, 
 
 ## Completed and verified
 
-- The flood and land views use solid charcoal and slate surfaces. Land results have underlined navigation and neutral measurement cards. The farmland view was verified in the browser.
+- The flood and land views use white panels, light gray backgrounds, and solid slate controls. Land results have underlined navigation and neutral measurement cards. The farmland view was verified in the browser.
 - Flood results lead with the mapped area and three radar images. Land results lead with a vegetation chart and satellite image. Detailed evidence and scenario controls expand on demand.
 - The land chart now switches among vegetation greenness, vegetation moisture, and regional soil moisture. Flood summary cards separate area, shared coverage, and quality. Verified browser interactions and the narrow layout.
 - The scenario view charts modeled weekly storage and links the selected week to its map and statistics. Verified both presets in the browser.

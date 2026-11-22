@@ -117,7 +117,7 @@
 .evidence-swipe img, .evidence-marked img { display: block; height: auto; padding: 0; }
 .evidence-swipe .evidence-layer, .evidence-marked .evidence-layer { position: absolute; inset: 0; width: 100%; height: 100%; }
 .evidence-swipe .evidence-layer { background: var(--inset); }
-.evidence-divider { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--ink); box-shadow: 0 0 3px var(--page); }
+.evidence-divider { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--surface); box-shadow: 0 0 3px var(--ink); }
 .evidence-slider { display: grid; gap: 6px; max-width: 560px; margin-block: 8px; }
 .evidence-slider input { width: 100%; }
 .evidence-pin { position: absolute; z-index: 1; transform: translate(-50%, -50%); border: 2px solid white; border-radius: 50%; min-width: 27px; min-height: 27px; padding: 0; color: white; background: #93440a; font-weight: 700; cursor: pointer; }
