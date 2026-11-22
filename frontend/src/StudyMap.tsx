@@ -12,7 +12,7 @@ type Place = { name: string; lat: number; lon: number; rank: number }
 type Basemap = { countries: FeatureCollection; boundaries: FeatureCollection; rivers: FeatureCollection; places: Place[] }
 
 const bounds: [LatLngTuple, LatLngTuple] = [[7, 65], [36, 102]]
-const areaStyle = { color: '#135e99', weight: 3, fillColor: '#5caee4', fillOpacity: 0.24, interactive: false }
+const areaStyle = { color: '#9dc8ff', weight: 3, fillColor: '#5caee4', fillOpacity: 0.20, interactive: false }
 const drawStyle = { ...areaStyle, dashArray: '6 4' }
 const assetBase = import.meta.env.BASE_URL
 const customTileUrl = import.meta.env.VITE_BASEMAP_URL
