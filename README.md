@@ -103,3 +103,7 @@ To rebuild the assets, save `ne_50m_admin_0_countries.geojson`, `ne_50m_admin_1_
 ## Project documentation
 
 See the [PRD](docs/PRD.md), [implementation status](docs/agent-memory/PROGRESS.md), and [handoff](docs/agent-memory/HANDOFF.md).
+
+## Contributors
+
+- Supriyam Kumar
